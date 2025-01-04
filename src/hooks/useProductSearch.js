@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import { getMockData } from '../utils/mockData';
+import mockData from '../utils/mockData.json'; // importamos el json q cambiamos 
 
 function useProductSearch(query) {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    const filteredProducts = getMockData().filter((product) =>
+    // Filtramos los productos según la query
+    const filteredProducts = mockData.filter((product) =>
       product.name.toLowerCase().includes(query.toLowerCase())
     );
     setProducts(filteredProducts);
@@ -14,3 +16,4 @@ function useProductSearch(query) {
 }
 
 export default useProductSearch;
+

@@ -1,14 +1,28 @@
 import React from 'react';
-import ProductCard from './ProductCard';
+import ProductTable from './ProductTable';
 
 function ProductList({ products }) {
   return (
-    <div className="product-list">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+    <div className="m-4">
+      <table className="min-w-full table-auto border-collapse">
+        <thead>
+          <tr className="bg-[#737373]">
+            <th className="px-4 py-2 text-center">Product Name</th>
+            <th className="px-4 py-2 text-center">Category</th>
+            <th className="px-4 py-2 text-center">Price</th>
+            <th className="px-4 py-2 text-center">Stock</th> {/* Nueva columna de Stock */}
+            <th className="px-4 py-2 text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <ProductTable key={product.id} product={product} />
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
 
 export default ProductList;
+

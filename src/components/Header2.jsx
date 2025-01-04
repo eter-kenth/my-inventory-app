@@ -8,8 +8,7 @@ function Header() {
         <h1 className='H1 text-black'>INVENTORY APP</h1>
       </div>
       <nav className='NAVS flex items-center justify-center gap-3'>
-        <Link className='Anchors text-black' to="/inventory">Inventory</Link>
-        <Link className='Anchors text-black' to="/orders">Orders</Link>
+        <Link className='Anchors text-black' to="/">Home</Link>
       </nav>
     </header>
   );
